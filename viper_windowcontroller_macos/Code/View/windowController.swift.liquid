@@ -1,0 +1,40 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+import AppKit
+
+class {{ module_info.name }}Controller: BaseWindowController<{{ module_info.name }}View> {
+    
+    // MARK: - Properties
+    
+    var presenter: {{ module_info.name }}PresenterProtocol?
+    
+    override var windowNibName: NSNib.Name {
+        return NSNib.Name("{{ module_info.name }}")
+    }
+
+    // MARK: - NSWindowController
+
+    override func windowDidLoad() {
+        super.windowDidLoad()
+
+        self.presenter?.windowDidLoad()
+    }
+    
+    deinit {
+        Swift.print("Deinit \(self)")
+    }
+}
+
+// MARK: - {{ module_info.name }}ControllerProtocol
+
+extension {{ module_info.name }}Controller: {{ module_info.name }}ControllerProtocol {
+
+}
+
