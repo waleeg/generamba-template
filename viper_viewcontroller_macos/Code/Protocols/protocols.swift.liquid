@@ -11,7 +11,7 @@ import AppKit
 
 protocol {{ module_info.name }}ViewControllerProtocol: class {
 
-    weak var presenter: {{ module_info.name }}PresenterProtocol? { get set }
+    var presenter: {{ module_info.name }}PresenterProtocol? { get set }
     
     // PRESENTER -> VIEW
 }
@@ -37,7 +37,7 @@ protocol {{ module_info.name }}InteractorOutputProtocol: class {
 }
 
 protocol {{ module_info.name }}InteractorInputProtocol: class {
-    weak var presenter: {{ module_info.name }}InteractorOutputProtocol? { get set }
+    var presenter: {{ module_info.name }}InteractorOutputProtocol? { get set }
     var localDataManager: {{ module_info.name }}LocalDataManagerInputProtocol? { get set }
     var remoteDataManager: {{ module_info.name }}RemoteDataManagerInputProtocol? { get set }
     
@@ -45,7 +45,7 @@ protocol {{ module_info.name }}InteractorInputProtocol: class {
 }
 
 protocol {{ module_info.name }}RemoteDataManagerInputProtocol: class {
-    weak var remoteRequestHandler: {{ module_info.name }}RemoteDataManagerOutputProtocol? { get set }
+    var remoteRequestHandler: {{ module_info.name }}RemoteDataManagerOutputProtocol? { get set }
     
     // INTERACTOR -> REMOTEDATAMANAGER
 }
@@ -55,7 +55,7 @@ protocol {{ module_info.name }}RemoteDataManagerOutputProtocol: class {
 }
 
 protocol {{ module_info.name }}LocalDataManagerInputProtocol: class {
-    weak var localRequestHandler: {{ module_info.name }}LocalDataManagerOutputProtocol? { get set }
+    var localRequestHandler: {{ module_info.name }}LocalDataManagerOutputProtocol? { get set }
 
      // INTERACTOR -> LOCALDATAMANAGER
 }
